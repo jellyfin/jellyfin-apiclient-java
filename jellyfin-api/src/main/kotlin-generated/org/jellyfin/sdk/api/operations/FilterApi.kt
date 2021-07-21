@@ -15,6 +15,7 @@ import kotlin.collections.emptyMap
 import kotlin.collections.mutableMapOf
 import org.jellyfin.sdk.api.client.KtorClient
 import org.jellyfin.sdk.api.client.Response
+import org.jellyfin.sdk.model.api.BaseItemKind
 import org.jellyfin.sdk.model.api.QueryFilters
 import org.jellyfin.sdk.model.api.QueryFiltersLegacy
 
@@ -40,7 +41,7 @@ public class FilterApi(
 	public suspend fun getQueryFilters(
 		userId: UUID? = null,
 		parentId: UUID? = null,
-		includeItemTypes: Collection<String>? = emptyList(),
+		includeItemTypes: Collection<BaseItemKind>? = emptyList(),
 		isAiring: Boolean? = null,
 		isMovie: Boolean? = null,
 		isSports: Boolean? = null,
@@ -78,7 +79,7 @@ public class FilterApi(
 	public suspend fun getQueryFiltersLegacy(
 		userId: UUID? = null,
 		parentId: UUID? = null,
-		includeItemTypes: Collection<String>? = emptyList(),
+		includeItemTypes: Collection<BaseItemKind>? = emptyList(),
 		mediaTypes: Collection<String>? = emptyList()
 	): Response<QueryFiltersLegacy> {
 		val pathParameters = emptyMap<String, Any?>()

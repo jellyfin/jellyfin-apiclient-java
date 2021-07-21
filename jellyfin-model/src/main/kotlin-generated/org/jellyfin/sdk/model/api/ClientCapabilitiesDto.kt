@@ -20,12 +20,12 @@ public data class ClientCapabilitiesDto(
 	 * Gets or sets the list of playable media types.
 	 */
 	@SerialName("PlayableMediaTypes")
-	public val playableMediaTypes: List<String>? = null,
+	public val playableMediaTypes: List<String>,
 	/**
 	 * Gets or sets the list of supported commands.
 	 */
 	@SerialName("SupportedCommands")
-	public val supportedCommands: List<GeneralCommandType>? = null,
+	public val supportedCommands: List<GeneralCommandType>,
 	/**
 	 * Gets or sets a value indicating whether session supports media control.
 	 */

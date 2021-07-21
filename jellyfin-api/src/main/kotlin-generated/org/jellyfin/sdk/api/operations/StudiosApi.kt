@@ -18,6 +18,7 @@ import org.jellyfin.sdk.api.client.KtorClient
 import org.jellyfin.sdk.api.client.Response
 import org.jellyfin.sdk.model.api.BaseItemDto
 import org.jellyfin.sdk.model.api.BaseItemDtoQueryResult
+import org.jellyfin.sdk.model.api.BaseItemKind
 import org.jellyfin.sdk.model.api.ImageType
 import org.jellyfin.sdk.model.api.ItemFields
 
@@ -74,8 +75,8 @@ public class StudiosApi(
 		searchTerm: String? = null,
 		parentId: UUID? = null,
 		fields: Collection<ItemFields>? = emptyList(),
-		excludeItemTypes: Collection<String>? = emptyList(),
-		includeItemTypes: Collection<String>? = emptyList(),
+		excludeItemTypes: Collection<BaseItemKind>? = emptyList(),
+		includeItemTypes: Collection<BaseItemKind>? = emptyList(),
 		isFavorite: Boolean? = null,
 		enableUserData: Boolean? = null,
 		imageTypeLimit: Int? = null,

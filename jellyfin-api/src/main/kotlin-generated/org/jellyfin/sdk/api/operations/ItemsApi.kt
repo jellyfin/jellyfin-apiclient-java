@@ -20,6 +20,7 @@ import org.jellyfin.sdk.api.client.KtorClient
 import org.jellyfin.sdk.api.client.Response
 import org.jellyfin.sdk.api.client.exception.MissingUserIdException
 import org.jellyfin.sdk.model.api.BaseItemDtoQueryResult
+import org.jellyfin.sdk.model.api.BaseItemKind
 import org.jellyfin.sdk.model.api.ImageType
 import org.jellyfin.sdk.model.api.ItemFields
 import org.jellyfin.sdk.model.api.ItemFilter
@@ -190,8 +191,8 @@ public class ItemsApi(
 		sortOrder: Collection<SortOrder>? = emptyList(),
 		parentId: UUID? = null,
 		fields: Collection<ItemFields>? = emptyList(),
-		excludeItemTypes: Collection<String>? = emptyList(),
-		includeItemTypes: Collection<String>? = emptyList(),
+		excludeItemTypes: Collection<BaseItemKind>? = emptyList(),
+		includeItemTypes: Collection<BaseItemKind>? = emptyList(),
 		filters: Collection<ItemFilter>? = emptyList(),
 		isFavorite: Boolean? = null,
 		mediaTypes: Collection<String>? = emptyList(),
@@ -483,8 +484,8 @@ public class ItemsApi(
 		sortOrder: Collection<SortOrder>? = emptyList(),
 		parentId: UUID? = null,
 		fields: Collection<ItemFields>? = emptyList(),
-		excludeItemTypes: Collection<String>? = emptyList(),
-		includeItemTypes: Collection<String>? = emptyList(),
+		excludeItemTypes: Collection<BaseItemKind>? = emptyList(),
+		includeItemTypes: Collection<BaseItemKind>? = emptyList(),
 		filters: Collection<ItemFilter>? = emptyList(),
 		isFavorite: Boolean? = null,
 		mediaTypes: Collection<String>? = emptyList(),
@@ -653,8 +654,8 @@ public class ItemsApi(
 		enableUserData: Boolean? = null,
 		imageTypeLimit: Int? = null,
 		enableImageTypes: Collection<ImageType>? = emptyList(),
-		excludeItemTypes: Collection<String>? = emptyList(),
-		includeItemTypes: Collection<String>? = emptyList(),
+		excludeItemTypes: Collection<BaseItemKind>? = emptyList(),
+		includeItemTypes: Collection<BaseItemKind>? = emptyList(),
 		enableTotalRecordCount: Boolean? = true,
 		enableImages: Boolean? = true
 	): Response<BaseItemDtoQueryResult> {

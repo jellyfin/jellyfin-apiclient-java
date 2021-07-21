@@ -5,6 +5,7 @@
 // Please read the README.md file in the openapi-generator module for additional information.
 package org.jellyfin.sdk.api.operations
 
+import java.time.LocalDateTime
 import java.util.UUID
 import kotlin.Any
 import kotlin.Boolean
@@ -103,6 +104,7 @@ public class TvShowsApi(
 	 * @param imageTypeLimit Optional. The max number of images to return, per image type.
 	 * @param enableImageTypes Optional. The image types to include in the output.
 	 * @param enableUserData Optional. Include user data.
+	 * @param nextUpDateCutoff Optional. Starting date of shows to show in Next Up section.
 	 * @param enableTotalRecordCount Whether to enable the total records count. Defaults to true.
 	 * @param disableFirstEpisode Whether to disable sending the first episode in a series as next up.
 	 */
@@ -117,6 +119,7 @@ public class TvShowsApi(
 		imageTypeLimit: Int? = null,
 		enableImageTypes: Collection<ImageType>? = emptyList(),
 		enableUserData: Boolean? = null,
+		nextUpDateCutoff: LocalDateTime? = null,
 		enableTotalRecordCount: Boolean? = true,
 		disableFirstEpisode: Boolean? = false
 	): Response<BaseItemDtoQueryResult> {
@@ -132,6 +135,7 @@ public class TvShowsApi(
 		queryParameters["imageTypeLimit"] = imageTypeLimit
 		queryParameters["enableImageTypes"] = enableImageTypes
 		queryParameters["enableUserData"] = enableUserData
+		queryParameters["nextUpDateCutoff"] = nextUpDateCutoff
 		queryParameters["enableTotalRecordCount"] = enableTotalRecordCount
 		queryParameters["disableFirstEpisode"] = disableFirstEpisode
 		val data = null
